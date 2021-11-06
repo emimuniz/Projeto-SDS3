@@ -3,7 +3,7 @@ package com.devsuperior.dsvendas.dto
 import java.io.Serializable
 import java.time.LocalDate
 
-class SaleDTO(
+data class SaleDTO(
     val id: Long,
     val visited: Int,
     val deals: Int,
