@@ -22,7 +22,7 @@ class SecurityConfig : WebSecurityConfigurerAdapter() {
 
     @Throws(Exception::class)
     override fun configure(http: HttpSecurity) {
-        if (env.activeProfiles.contains("teste")) {
+        if (env.activeProfiles.contains("test")) {
             http.headers().frameOptions().disable()
         }
         http.cors().and().csrf().disable()
