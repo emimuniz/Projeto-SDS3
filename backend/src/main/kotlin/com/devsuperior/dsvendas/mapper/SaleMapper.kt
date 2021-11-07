@@ -10,7 +10,7 @@ import java.time.LocalDate
 
 @Component
 class SaleMapper(
-
+    private val sellerService: SellerService
 ): Mapper<Sale, SaleDTO> {
         override fun map(t: Sale): SaleDTO {
             return SaleDTO(
@@ -18,7 +18,8 @@ class SaleMapper(
                 visited = t.visited,
                 deals = t.deals,
                 amount = t.amount,
-                date = t.date
+                date = t.date,
+                seller = sellerService.buscaPorId(t.seller.id)
             )
         }
 }

@@ -14,10 +14,15 @@ class SellerService(
     private val sellerMapper: SellerMapper
 ) {
 
-    fun findAll() :   List<SellerDTO> {
+    fun findAll() : List<SellerDTO> {
         val result = repository.findAll()
         return result.map{
             t -> sellerMapper.map(t)
         }
+    }
+
+    fun buscaPorId(id: Long): SellerDTO {
+        val result = repository.getById(id)
+        return sellerMapper.map(result)
     }
 }

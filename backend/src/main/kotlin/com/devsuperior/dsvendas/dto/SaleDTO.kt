@@ -9,5 +9,6 @@ data class SaleDTO(
     val deals: Int,
     val amount: Double,
     val date: LocalDate,
+    val seller: SellerDTO
 
 ) : Serializable
